@@ -1,4 +1,4 @@
-const API_URL = 'https://backend-alumnos-lovat.vercel.app';
+const API_URL = 'https://backend-alumnos-lovat.vercel.app/api/alumnos';
 
 export const alumnosService = {
   getAll: async () => {
