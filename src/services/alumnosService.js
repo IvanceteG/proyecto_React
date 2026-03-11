@@ -1,13 +1,13 @@
-const BASE_URL = 'http://localhost:3001/api/alumnos';
+const API_URL = 'https://backend-alumnos-lovat.vercel.app';
 
 export const alumnosService = {
   getAll: async () => {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(API_URL);
     return res.json();
   },
 
   create: async (alumno) => {
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(alumno),
@@ -16,7 +16,7 @@ export const alumnosService = {
   },
 
   update: async (id, datos) => {
-    const res = await fetch(`${BASE_URL}/${id}`, {
+    const res = await fetch(`${API_URL}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(datos),
@@ -25,6 +25,6 @@ export const alumnosService = {
   },
 
   delete: async (id) => {
-    await fetch(`${BASE_URL}/${id}`, { method: 'DELETE' });
+    await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
   },
 };
